@@ -1,0 +1,68 @@
+body {
+    min-height: 100vh;
+    background-color: #f8fbff;
+    background-image:
+        radial-gradient(circle at top left, rgba(219, 234, 254, 0.45), transparent 32%),
+        radial-gradient(circle at top right, rgba(219, 234, 254, 0.45), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(191, 219, 254, 0.28), transparent 38%),
+        radial-gradient(circle, rgba(160, 180, 210, 0.18) 1px, transparent 1.2px);
+    background-size:
+        auto,
+        auto,
+        24px 24px;
+    font-family: 'inter', sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Icon Styles */
+#nav-settings-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 25%;
+    width: 25px;
+    height: 25px;
+
+    /* Prevent dragging and text selection */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#nav-project-name {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+
+    /* Prevent user selection */
+    user-select: none;
+}
+
+#add-task-btn {
+    background-color: #ffffff;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+
+    /* Prevent user selection */
+    user-select: none;
+}
