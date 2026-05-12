@@ -4,6 +4,7 @@ body {
     background-image:
         radial-gradient(circle at top left, rgba(219, 234, 254, 0.45), transparent 32%),
         radial-gradient(circle at top right, rgba(219, 234, 254, 0.45), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(219, 234, 254, 0.45), transparent 38%),
         radial-gradient(circle at bottom right, rgba(191, 219, 254, 0.28), transparent 38%),
         radial-gradient(circle, rgba(160, 180, 210, 0.18) 1px, transparent 1.2px);
     background-size:
@@ -11,6 +12,11 @@ body {
         auto,
         24px 24px;
     font-family: 'inter', sans-serif;
+}
+
+/* Specifics */
+.task-subject-value, .task-priority-value, .task-title-value, .task-due-date-value, .task-completion-value {
+    font-family: JetBrains Mono, monospace;
 }
 
 /* Header Styles */
@@ -22,12 +28,14 @@ header {
 }
 
 nav ul {
+    /*Spacing*/
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    list-style: none;
+    align-items: center;
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 /* Navigation Icon Styles */
@@ -36,8 +44,11 @@ nav ul {
     height: 20px;
     border: 2px solid #ccc;
     border-radius: 25%;
-    width: 25px;
-    height: 25px;
+
+    /* Flexbox control */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* Prevent dragging and text selection */
     user-select: none;
@@ -58,11 +69,133 @@ nav ul {
     color: #333;
     border: 2px solid #ccc;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+
     font-size: 20px;
     cursor: pointer;
 
+    /* Flexbox control */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     /* Prevent user selection */
     user-select: none;
+}
+
+/* Main Content Styles */
+main {
+    /*Spacing*/
+    margin: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    padding: 20px;
+    text-align: center;
+
+    background-color: #fdffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#task-container {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Task Card Styling */
+.task-card {
+    width: 550px;
+    background-color: #ffffff;
+    border: #f9fff8 solid 1px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-top-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-bottom: 1px;
+    margin-bottom: auto;
+}
+
+.task-icon-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.task-subject-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.task-main-text-container {
+    display: flex;
+    column-gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.task-subject {
+    margin-bottom: auto;
+    font-size: 18px;
+    color: #666;
+}
+
+.task-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 28px;
+    color: #0a0a0a;
+}
+
+.task-priority-badge-container {
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.task-priority-badge {
+    background-color: rgb(255,155,155);
+    color: red;
+    border: rgb(255, 133, 133) solid 1px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.task-divider-container {
+    border: #fdffff solid 1px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.task-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-due-date {
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.task-completion-badge {
+    background-color: rgb(155, 255, 155);
+    color: green;
+    border: rgb(133, 255, 133) solid 1px;
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 20px;
 }
