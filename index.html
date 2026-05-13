@@ -12,11 +12,38 @@
             <ul>
                 <li><a href="settings.html"><img src="assets/images/settings-icon.png" alt="Settings-Button" id="nav-settings-btn"></a></li>
                 <li><p id="nav-project-name"><strong>Student Homework Tracker</strong></p></li>
-                <li><button type="button" id="add-task-btn">+</button></li>
+                <li><button type="button" id="add-task-btn" onclick="add_task_dialog.showModal()">+</button></li>
             </ul>
         </nav>
     </header>
     <main>
+        <!-- Add Task Form Container (Initially Hidden) -->
+        <dialog id="add-task-form-container">
+            <form id="add-task-form">
+                <h2>Add New Task: </h2>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g. Mathematics" autocomplete="off" required>
+                
+                <label for="title">Task Title:</label>
+                <input type="text" id="title" name="title" placeholder="e.g. Task 5.2" autocomplete="off" required>
+                
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" required>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" name="due-date" autocomplete="off" required>
+
+                <button type="submit" id="form-submit-btn"><strong>Add Task</strong></button>
+                <button type="button" id="form-close-btn" onclick="add_task_dialog.close()"><strong>Close Form</strong></button>
+                <p id="form-message"></p>
+        </form>
+    </dialog>
+        <!-- Task Container (Initially Hidden) -->
         <h2>Your Schedule</h2>
         <div id="task-container">
             <article class="task-card" data-subject="Mathematics" data-priority="high" data-task="Task 5.2" data-due-date="2023-10-15" data-completed="true">
@@ -46,5 +73,7 @@
             </article>
         </div>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -199,3 +199,58 @@ main {
     padding: 3px;
     margin-right: 20px;
 }
+
+/* Add Task Form Styles */
+#add-task-form-container {
+    background: #fdffff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 550px;
+    max-width: 90%;
+}
+
+#add-task-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin: 20px;
+}
+
+#add-task-form label {
+    font-size: 20px;
+    color: #000000;
+    text-align: left;
+}
+
+#add-task-form input, #add-task-form select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: jetbrains mono, monospace;
+}
+
+#form-submit-btn {
+    font-family: jetbrains mono, monospace;
+    background-color: #77ffb0;
+    color: #3a3a3a;
+    border: 2px solid #25ff49;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#form-close-btn {
+    font-family: jetbrains mono, monospace;
+    background-color: #ff7777;
+    color: #3a3a3a;
+    border: 2px solid #ff2525;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
