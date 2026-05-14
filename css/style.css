@@ -1,3 +1,7 @@
+/* ==================================================
+    GLOBAL / PAGE BASE
+   ================================================== */
+
 body {
     min-height: 100vh;
     background-color: #f8fbff;
@@ -14,10 +18,22 @@ body {
     font-family: 'inter', sans-serif;
 }
 
+/* ==================================================
+    UTILITY / SHARED STYLES
+   ================================================== */
+
 /* Specifics */
 .task-subject-value, .task-priority-value, .task-title-value, .task-due-date-value, .task-completion-value {
     font-family: JetBrains Mono, monospace;
 }
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* ==================================================
+    HEADER / NAVIGATION
+   ================================================== */
 
 /* Header Styles */
 header {
@@ -82,6 +98,10 @@ nav ul {
     user-select: none;
 }
 
+/* ==================================================
+    MAIN LAYOUT / TASK AREA
+   ================================================== */
+
 /* Main Content Styles */
 main {
     /*Spacing*/
@@ -104,7 +124,14 @@ main {
     align-items: flex-start;
 }
 
+
+
+/* ==================================================
+    TASK CARD
+   ================================================== */
+
 /* Task Card Styling */
+
 .task-card {
     width: 550px;
     background-color: #ffffff;
@@ -200,57 +227,157 @@ main {
     margin-right: 20px;
 }
 
-/* Add Task Form Styles */
+
+
+/* ==================================================
+    ADD TASK FORM / MODAL
+   ================================================== */
+
+/* Add Task Form Styling */
+
 #add-task-form-container {
-    background: #fdffff;
-    border: none;
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(180, 200, 220, 0.35);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
     width: 500px;
-    height: 550px;
     max-width: 90%;
+    position: relative;
+    overflow: hidden;
 }
 
 #add-task-form {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    margin: 20px;
+    gap: 16px;
+    margin: 0;
 }
 
-#add-task-form label {
-    font-size: 20px;
-    color: #000000;
-    text-align: left;
+#add-task-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
-#add-task-form input, #add-task-form select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: jetbrains mono, monospace;
-}
-
-#form-submit-btn {
-    font-family: jetbrains mono, monospace;
-    background-color: #77ffb0;
-    color: #3a3a3a;
-    border: 2px solid #25ff49;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+#add-task-form h2 {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #102033;
+    letter-spacing: -0.5px;
 }
 
 #form-close-btn {
-    font-family: jetbrains mono, monospace;
-    background-color: #ff7777;
-    color: #3a3a3a;
-    border: 2px solid #ff2525;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff1f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
+    user-select: none;
+
+    transition: 0.2s ease;
+}
+
+#form-close-btn:hover {
+    background-color: #fee2e2;
+    transform: scale(1.04);
+    }
+
+#add-task-form label {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #243447;
+    margin-bottom: -8px;
+}
+
+#add-task-form select {
+    cursor: pointer;
+}
+
+#due-date {
+    cursor: text;
+}
+
+#add-task-form input,
+#add-task-form select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+    border: 1px solid #d6e1ee;
+    border-radius: 12px;
+
+    background-color: #f9fcff;
+    color: #102033;
+
+    font-size: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    outline: none;
+    transition: 0.2s ease;
+}
+
+#add-task-form input:focus,
+#add-task-form select:focus {
+    border-color: #60a5fa;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.18);
+}
+
+#add-task-form input::placeholder {
+    color: #94a3b8;
+}
+
+#form-message {
+    margin: 0;
+    color: #dc2626;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#form-submit-btn {
+    margin-top: 18px;
+
+    padding: 13px;
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: white;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s ease;
+}
+
+#form-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+}
+
+#form-submit-btn:active {
+    transform: translateY(5px);
+    box-shadow: none;
 }

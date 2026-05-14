@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Homework Tracker</title>
 </head>
 <body>
     <header>
@@ -12,37 +12,44 @@
             <ul>
                 <li><a href="settings.html"><img src="assets/images/settings-icon.png" alt="Settings-Button" id="nav-settings-btn"></a></li>
                 <li><p id="nav-project-name"><strong>Student Homework Tracker</strong></p></li>
-                <li><button type="button" id="add-task-btn" onclick="add_task_dialog.showModal()">+</button></li>
+                <li><button type="button" id="add-task-btn">+</button></li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- Add Task Form Container (Initially Hidden) -->
         <dialog id="add-task-form-container">
-            <form id="add-task-form">
-                <h2>Add New Task: </h2>
-                
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" placeholder="e.g. Mathematics" autocomplete="off" required>
-                
-                <label for="title">Task Title:</label>
-                <input type="text" id="title" name="title" placeholder="e.g. Task 5.2" autocomplete="off" required>
-                
-                <label for="priority">Priority:</label>
-                <select id="priority" name="priority" required>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                </select>
+                <form id="add-task-form">
+                    <div id="add-task-top">
+                        <h2><strong>Add New Task: </strong></h2>
+                        <button type="button" id="form-close-btn"><strong>X</strong></button>
+                    </div>
+                    
+                    <label for="subject">Subject:</label>
+                    <select type="text" id="subject" name="subject" placeholder="e.g. Mathematics" autocomplete="off">
+                        <option value="mathematics">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="english">English</option>
+                    </select>
 
-                <label for="due-date">Due Date:</label>
-                <input type="date" id="due-date" name="due-date" autocomplete="off" required>
+                    <label for="title">Task Title:</label>
+                    <input type="text" id="title" name="title" placeholder="e.g. Task 5.2" autocomplete="off">
+                    
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
 
-                <button type="submit" id="form-submit-btn"><strong>Add Task</strong></button>
-                <button type="button" id="form-close-btn" onclick="add_task_dialog.close()"><strong>Close Form</strong></button>
-                <p id="form-message"></p>
-        </form>
-    </dialog>
+                    <label for="due-date">Due Date:</label>
+                    <input type="date" id="due-date" name="due-date" autocomplete="off">
+
+                    <p id="form-message"></p>
+
+                    <button type="submit" id="form-submit-btn"><strong>Add Task</strong></button>
+            </form>
+        </dialog>
         <!-- Task Container (Initially Hidden) -->
         <h2>Your Schedule</h2>
         <div id="task-container">
